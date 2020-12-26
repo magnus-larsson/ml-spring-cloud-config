@@ -1,0 +1,6 @@
+spring.rabbitmq.host: rabbitdev
+
+---
+spring.config.activate.on-profile: test
+
+spring.rabbitmq.host: rabbittest

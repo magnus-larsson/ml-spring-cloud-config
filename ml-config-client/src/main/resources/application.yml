@@ -1,0 +1,19 @@
+app.config-server: localhost
+
+spring.config.import: "configserver:"
+
+spring:
+  application.name: product
+  cloud.config:
+    failFast: true
+    retry:
+      initialInterval: 500
+      multiplier: 2.0
+      maxInterval: 2000
+      maxAttempts: 10
+    uri: http://${app.config-server}:8888
+
+---
+spring.config.activate.on-profile: docker
+
+app.config-server: config-server

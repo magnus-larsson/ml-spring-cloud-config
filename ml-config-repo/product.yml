@@ -1,0 +1,9 @@
+server.port: 7001
+server.error.include-message: always
+
+spring.data.mongodb.host: mongodev
+
+---
+spring.config.activate.on-profile: test
+
+spring.data.mongodb.host: mongotest
